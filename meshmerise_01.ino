@@ -30,11 +30,8 @@ Motor motor_l = Motor(LIN1, LIN2, LPWM, -1, 99);  // Left motorl
 #define LED_L 0
 #define LED_R 21
 // Motor speed control
-// #define BASE_SPEED 150
-// #define MAX_SPEED 200
 #define TURN_SPEED 150
 // setting up bittons for RSLB and LSRB
-//#define ALGO 22
 #define FINALB 23
 #define STARTB 22
 bool ABUT = false;
@@ -190,21 +187,6 @@ void loop() {
   moveForward();
   stopMotors();
   qtr.readLineWhite(sensorValues);
-  // if(sensorValues[0]< Twhite){
-  //   turn='L';
-  // }
-  // if(sensorValues[7]<Twhite){
-  //   turn='R';
-  // }
-  // if(Turn==turn){
-  //    while (true) {
-  //     if (digitalRead(FINALB) == HIGH) {
-  //       delay(600);
-  //       break;
-  //     }
-  //   }
-  //   finalRun();
-  // }
   
   if (sensorValues[0] < Twhite && sensorValues[1] < Twhite && sensorValues[2] < Twhite && sensorValues[3] < Twhite && sensorValues[4] < Twhite && sensorValues[5] < Twhite && sensorValues[6] < Twhite && sensorValues[7] < Twhite) {
     while (true) {
